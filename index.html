@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IA Automate — SYSTINFO Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:hsl(48 33% 97%);--ink:hsl(215 60% 9%);--card:#fff;--navy:hsl(213 71% 18%);--navy-dark:hsl(214 76% 11%);--gold:hsl(38 44% 60%);--gold-dark:hsl(35 55% 32%);--muted:hsl(40 16% 92%);--muted-fg:hsl(215 16% 35%);--rule:hsl(38 18% 87%);--radius:.375rem}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:600;margin:0;color:var(--navy)}
+header.top{background:var(--navy-dark);color:#fff;border-bottom:4px solid var(--gold)}
+.top-in{max-width:1080px;margin:0 auto;padding:20px 24px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.logo{background:#fff;border-radius:var(--radius);padding:4px;height:72px;width:72px;object-fit:contain;flex:none}
+.brand{font:700 24px "Playfair Display",Georgia,serif;letter-spacing:.06em}
+.brand small{display:block;font:500 11px "IBM Plex Sans";letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-top:2px}
+.top-in .sw{margin-left:auto;display:flex;gap:8px}
+.top-in .sw a{color:hsl(48 33% 90%);text-decoration:none;font-size:14px;padding:7px 12px;border:1px solid hsl(214 40% 30%);border-radius:var(--radius)}
+.top-in .sw a:hover{background:hsl(214 60% 16%)}
+.top-in .sw a.on{border-color:var(--gold);color:#fff}
+main{max-width:1080px;margin:0 auto;padding:36px 24px 72px}
+.hero h1{font-size:34px;line-height:1.2}
+.hero .rule{height:2px;width:56px;background:var(--gold);margin:14px 0 16px}
+.hero p{margin:0;max-width:760px;color:var(--muted-fg);font-size:17px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:26px 0 8px}
+.kpi{background:var(--card);border:1px solid var(--rule);border-top:3px solid var(--gold);border-radius:var(--radius);padding:14px 18px}
+.kpi b{display:block;font:600 30px "Playfair Display",serif;color:var(--navy)}
+.kpi span{color:var(--muted-fg);font-size:13px}
+.toc{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0 0}
+.toc a{text-decoration:none;color:var(--navy);background:#fff;border:1px solid var(--rule);border-left:3px solid var(--gold);border-radius:var(--radius);padding:8px 14px;font-weight:500;font-size:14px}
+.toc a:hover{background:var(--muted)}
+.seance{margin-top:48px}
+.s-head{background:var(--navy-dark);color:#fff;border-radius:var(--radius);padding:22px 26px;border-left:5px solid var(--gold)}
+.s-head .tag{font:500 11px "IBM Plex Sans";letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.s-head h2{color:#fff;font-size:25px;margin:6px 0 6px}
+.s-head p{margin:0;color:hsl(48 33% 85%)}
+.themes{display:grid;gap:16px;margin-top:18px}
+.theme{background:var(--card);border:1px solid var(--rule);border-radius:var(--radius);padding:20px 24px;display:grid;grid-template-columns:48px 1fr;gap:6px 16px}
+.theme .n{font:600 26px "Playfair Display",serif;color:var(--gold-dark);line-height:1.1}
+.theme h3{font-size:19px;margin-bottom:4px}
+.theme .lead{margin:0 0 8px;color:var(--muted-fg)}
+.theme ul{margin:0;padding-left:20px}
+.theme li{margin:4px 0}
+.theme li::marker{color:var(--gold)}
+.theme li b{color:var(--navy);font-weight:600}
+.note{margin-top:14px;padding:14px 18px;background:#fff;border:1px solid var(--rule);border-left:4px solid var(--gold);border-radius:var(--radius);color:var(--muted-fg)}
+footer{border-top:1px solid var(--rule);padding:22px 24px;text-align:center;color:var(--muted-fg);font-size:13px}
+@media(max-width:640px){.hero h1{font-size:26px}.theme{grid-template-columns:1fr}.top-in .sw{margin-left:0}.s-head{padding:18px}main{padding:24px 16px 56px}.top-in{padding:16px}}
+@media print{header.top,.toc{display:none}body{background:#fff}.theme{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <img class="logo" src="logo.jpeg" alt="Logo SYSTINFO">
+  <div class="brand">SYSTINFO<small>Academy · Parcours IA Automate</small></div>
+  <nav class="sw"></nav>
+</div></header>
+<main>
+  <div class="hero">
+    <h1>IA Automate : ce que vous avez appris</h1><div class="rule"></div>
+    <p>Bilan pédagogique des séances déjà dispensées. Pour chaque grand thème, vous retrouvez les notions abordées, sans détail technique, afin de situer vos acquis et de préparer la suite.</p>
+    <div class="kpis">
+      <div class="kpi"><b>2</b><span>séances dispensées</span></div>
+      <div class="kpi"><b>9</b><span>grands thèmes abordés</span></div>
+      <div class="kpi"><b>n8n</b><span>outil central de la formation</span></div>
+    </div>
+    <nav class="toc"><a href="#s1">Séance 1 · Cartographier et découvrir n8n</a><a href="#s2">Séance 2 · n8n en profondeur</a></nav>
+  </div>
+  
+<section class="seance" id="s1">
+  <div class="s-head"><div class="tag">Séance 1 · Atelier pratique</div><h2>Cartographier ses processus et découvrir n8n</h2><p>Identifier les tâches qui méritent d'être automatisées, puis construire un premier workflow avec n8n.</p></div>
+  <div class="themes">
+    <article class="theme"><div class="n">01</div><div>
+      <h3>Les mots de l'automatisation</h3><p class="lead">Partager un vocabulaire commun avant de construire.</p>
+      <ul><li><b>Automatiser</b> : confier une règle à une machine.</li><li><b>Le workflow</b> : une chaîne de montage, du déclencheur aux actions.</li><li><b>Règle, IA ou agent</b> : trois niveaux d'automatisation et deux questions pour choisir.</li><li><b>La donnée</b> : comment une information circule d'une étape à l'autre.</li></ul></div></article>
+    <article class="theme"><div class="n">02</div><div>
+      <h3>Cartographier ses processus</h3><p class="lead">Choisir les bonnes tâches à automatiser en premier.</p>
+      <ul><li><b>Trois questions</b> pour repérer une tâche candidate.</li><li><b>La matrice fréquence, effort, risque</b> pour prioriser.</li><li><b>Le calcul du gain</b> : le temps libéré sur une année.</li><li><b>Cas pratique</b> : la cartographie d'un directeur d'école, puis <b>atelier 1</b> sur ses propres tâches.</li></ul></div></article>
+    <article class="theme"><div class="n">03</div><div>
+      <h3>Découvrir n8n</h3><p class="lead">Prendre en main l'outil visuel d'automatisation.</p>
+      <ul><li><b>Un outil visuel</b> : relier des applications sans écrire de code.</li><li><b>L'espace de travail</b> et ses grandes zones.</li><li><b>Les trois familles de nœuds</b>, dont les déclencheurs.</li><li><b>Tester n'est pas publier</b> : la différence entre essai et mise en service.</li><li><b>Démonstration</b> : un premier nœud.</li></ul></div></article>
+    <article class="theme"><div class="n">04</div><div>
+      <h3>Votre premier workflow de notification</h3><p class="lead">Construire de bout en bout une automatisation utile.</p>
+      <ul><li><b>Le formulaire</b> qui déclenche le workflow.</li><li><b>Le message</b> composé automatiquement.</li><li><b>La connexion à Gmail</b> pour envoyer la notification.</li><li><b>Test, publication et suivi</b> des exécutions.</li><li><b>Quand ça ne marche pas</b> : repérer la cause et corriger.</li><li><b>Atelier de 40 minutes</b> et trois défis pour aller plus loin.</li></ul></div></article>
+  </div>
+</section>
+<section class="seance" id="s2">
+  <div class="s-head"><div class="tag">Séance 2 · Fil rouge : une veille automatisée</div><h2>n8n en profondeur : logique, erreurs et sous-workflows</h2><p>Construire pas à pas une veille d'actualité automatisée, qui cherche, trie, résume et envoie un digest, tout en la rendant fiable.</p></div>
+  <div class="themes">
+    <article class="theme"><div class="n">01</div><div>
+      <h3>Items, données et expressions</h3><p class="lead">Comprendre ce que n8n manipule réellement.</p>
+      <ul><li><b>Une liste d'items</b> traitée un par un.</li><li><b>Les références</b> pour retrouver une information d'une étape à l'autre.</li><li><b>Une API en trois mots</b>.</li><li><b>Chercher sur le web</b> et <b>normaliser</b> les articles récupérés.</li></ul></div></article>
+    <article class="theme"><div class="n">02</div><div>
+      <h3>La logique : décider et nettoyer</h3><p class="lead">Faire en sorte que le workflow prenne les bonnes décisions.</p>
+      <ul><li><b>Les nœuds de décision</b> pour orienter le flux.</li><li><b>La suppression des doublons</b>, avec une mémoire des articles déjà vus.</li><li><b>L'IA qui trie</b> : classer les articles par priorité avec Gemini.</li><li><b>Aiguiller et archiver</b> selon le résultat du tri.</li></ul></div></article>
+    <article class="theme"><div class="n">03</div><div>
+      <h3>Sous-workflows et planification</h3><p class="lead">Rendre l'automatisation réutilisable et autonome.</p>
+      <ul><li><b>Le sous-workflow</b> : un module que l'on réutilise.</li><li><b>Planifier sans se piéger</b> : exécutions programmées.</li><li><b>Résumer et envoyer</b> : recevoir son premier digest.</li></ul></div></article>
+    <article class="theme"><div class="n">04</div><div>
+      <h3>Déboguer et tolérer les erreurs</h3><p class="lead">Prévoir les pannes plutôt que les subir.</p>
+      <ul><li><b>Deux familles d'erreurs</b>, deux réponses adaptées.</li><li><b>Les trois choix</b> face à une erreur : s'arrêter, continuer ou rediriger.</li><li><b>Le workflow d'erreur</b> qui prévient en cas de problème.</li><li><b>Repli et alerte</b> : continuer malgré une panne et en être informé.</li></ul></div></article>
+    <article class="theme"><div class="n">05</div><div>
+      <h3>Héberger, publier, sauvegarder</h3><p class="lead">Passer de l'essai à l'usage réel.</p>
+      <ul><li><b>Où faire tourner n8n</b> : les options d'hébergement.</li><li><b>Enregistrer n'est plus publier</b>.</li><li><b>Quatre réflexes en production</b>.</li><li><b>La règle de sauvegarde 3-2-1</b>.</li><li><b>Publier et exporter</b> son workflow.</li></ul></div></article>
+  </div><div class="note"><b>Livrable :</b> le workflow de veille publié et exporté, à rendre avant le 5 novembre.</div>
+</section>
+</main>
+<footer>SYSTINFO Academy · IA Automate · Bilan pédagogique 2026-2027 · Mis à jour après la Semaine 1</footer>
+</body>
+</html>
