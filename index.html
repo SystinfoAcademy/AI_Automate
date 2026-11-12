@@ -48,6 +48,11 @@ main{max-width:1080px;margin:0 auto;padding:36px 24px 72px}
 .theme li::marker{color:var(--gold)}
 .theme li b{color:var(--navy);font-weight:600}
 .note{margin-top:14px;padding:14px 18px;background:#fff;border:1px solid var(--rule);border-left:4px solid var(--gold);border-radius:var(--radius);color:var(--muted-fg)}
+.theme.todo{background:hsl(40 70% 97%);border-style:dashed;border-color:hsl(35 55% 60%)}
+.theme.todo .n{color:hsl(35 40% 55%)}
+.badge{display:inline-block;margin-left:10px;padding:2px 10px;border-radius:99px;font:500 12px "IBM Plex Sans";background:hsl(40 70% 90%);color:hsl(35 70% 32%);vertical-align:middle;white-space:nowrap}
+.alert{margin-top:26px;padding:16px 20px;background:hsl(40 70% 94%);border:1px solid hsl(35 55% 70%);border-left:5px solid hsl(35 70% 45%);border-radius:var(--radius);color:var(--ink)}
+.alert b.t{display:block;font:600 12px "IBM Plex Sans";letter-spacing:.1em;text-transform:uppercase;color:hsl(35 70% 32%);margin-bottom:4px}
 footer{border-top:1px solid var(--rule);padding:22px 24px;text-align:center;color:var(--muted-fg);font-size:13px}
 @media(max-width:640px){.hero h1{font-size:26px}.theme{grid-template-columns:1fr}.top-in .sw{margin-left:0}.s-head{padding:18px}main{padding:24px 16px 56px}.top-in{padding:16px}}
 @media print{header.top,.toc{display:none}body{background:#fff}.theme{break-inside:avoid}}
@@ -65,10 +70,12 @@ footer{border-top:1px solid var(--rule);padding:22px 24px;text-align:center;colo
     <p>Bilan pédagogique des séances déjà dispensées. Pour chaque grand thème, vous retrouvez les notions abordées, sans détail technique, afin de situer vos acquis et de préparer la suite.</p>
     <div class="kpis">
       <div class="kpi"><b>4</b><span>séances dispensées</span></div>
-      <div class="kpi"><b>19</b><span>grands thèmes abordés</span></div>
+      <div class="kpi"><b>15</b><span>grands thèmes abordés</span></div>
       <div class="kpi"><b>2 semaines</b><span>de formation couvertes à ce jour</span></div>
+      <div class="kpi"><b>4</b><span>thèmes non abordés, à reprendre</span></div>
     </div>
     <nav class="toc"><a href="#s1">Séance 1 · Cartographier et découvrir n8n</a><a href="#s2">Séance 2 · n8n en profondeur</a><a href="#s3">Séance 3 · Intégrations, API et MCP</a><a href="#s4">Séance 4 · Claude en cinq niveaux</a></nav>
+    <div class="alert"><b class="t">Note pédagogique</b>Il faut prendre en considération le retard technique de l'audience (maîtrise des outils, comptes et prérequis) afin d'éviter un fossé entre les objectifs de la formation et le niveau réellement atteint. Le rythme des séances doit s'ajuster à ce niveau, et les points non abordés, signalés « À reprendre » ci-dessous, sont à reprogrammer.</div>
   </div>
   
 <section class="seance" id="s1">
@@ -119,14 +126,14 @@ footer{border-top:1px solid var(--rule);padding:22px 24px;text-align:center;colo
       <ul><li><b>Une API</b> : le guichet d'une application.</li><li><b>Anatomie d'une requête</b> : l'adresse, le verbe et le contenu envoyé.</li><li><b>La réponse</b> : un code de résultat, puis une fiche de données.</li><li><b>Prouver qui on est</b> : clé d'accès ou connexion OAuth2, en quatre temps.</li><li><b>Polling ou webhook</b> : aller chercher les nouveautés ou être prévenu.</li><li><b>Le nœud HTTP Request</b> : la clé universelle quand aucun nœud dédié n'existe.</li></ul></div></article>
     <article class="theme"><div class="n">03</div><div>
       <h3>Atelier : synchroniser Google Sheets et Notion</h3><p class="lead">Garder deux outils à jour sans ressaisie.</p>
-      <ul><li><b>Préparer Notion</b> : une base « Commandes », sa connexion et son partage.</li><li><b>Une seule source</b> : la feuille, avec un identifiant unique par commande.</li><li><b>Importer le squelette</b> du workflow, puis le comprendre nœud par nœud.</li><li><b>Trouvée ou pas ?</b> Mettre à jour la fiche existante ou en créer une nouvelle.</li><li><b>Branche d'erreur</b>, test partiel, puis publication.</li></ul></div></article>
-    <article class="theme"><div class="n">04</div><div>
-      <h3>Atelier : un bot de reporting Telegram</h3><p class="lead">Recevoir chaque jour un état des commandes.</p>
+      <ul><li><b>Préparer Notion</b> : une base « Commandes », sa connexion et son partage.</li><li><b>Une seule source</b> : la feuille, avec un identifiant unique par commande, et une synchronisation par interrogation régulière (polling).</li><li><b>Importer le squelette</b> du workflow, puis le comprendre nœud par nœud.</li><li><b>Trouvée ou pas ?</b> Mettre à jour la fiche existante ou en créer une nouvelle.</li><li><b>Branche d'erreur</b>, test partiel, puis publication.</li></ul></div></article>
+    <article class="theme todo"><div class="n">04</div><div>
+      <h3>Atelier : un bot de reporting Telegram<span class="badge">À reprendre</span></h3><p class="lead">Recevoir chaque jour un état des commandes.</p>
       <ul><li><b>Créer son bot</b> et retrouver son identifiant de conversation.</li><li><b>Compter par statut</b> et composer le message.</li><li><b>Envoyer</b> le rapport sur Telegram.</li><li><b>Option</b> : faire rédiger un résumé par l'IA.</li><li><b>Problèmes fréquents</b> : comptes et accès, synchronisation, réglages.</li></ul></div></article>
-    <article class="theme"><div class="n">05</div><div>
-      <h3>Les connecteurs MCP</h3><p class="lead">Donner à un assistant IA l'accès à vos outils.</p>
+    <article class="theme todo"><div class="n">05</div><div>
+      <h3>Les connecteurs MCP<span class="badge">À reprendre</span></h3><p class="lead">Donner à un assistant IA l'accès à vos outils.</p>
       <ul><li><b>Le problème</b> : un modèle ne voit pas vos outils par défaut.</li><li><b>MCP</b> : une prise standard pour les brancher.</li><li><b>Dans n8n</b> : un agent et les outils qu'on lui confie.</li><li><b>Démonstration</b> : interroger la base d'Awa en langage courant.</li><li><b>Workflow ou agent</b> : quand choisir l'un ou l'autre.</li></ul></div></article>
-  </div>
+  </div><div class="note"><b>Bilan :</b> les rappels, les boucles, l'authentification OAuth, l'intégration de Google Sheets et la synchronisation avec Notion par polling ont été traités. Le bot de reporting et l'introduction au MCP restent à reprendre.</div>
 </section>
 <section class="seance" id="s4">
   <div class="s-head"><div class="tag">Séance 4 · Semaine 2 · Jour 2</div><h2>Claude en cinq niveaux : du contexte à la délégation</h2><p>Monter en puissance avec Claude sur un cas d'entreprise fictive, NERE Services : lui faire connaître son travail, brancher ses outils, lui faire livrer des documents, construire des applications, puis lui déléguer des tâches.</p></div>
@@ -140,13 +147,13 @@ footer{border-top:1px solid var(--rule);padding:22px 24px;text-align:center;colo
     <article class="theme"><div class="n">03</div><div>
       <h3>Niveau 3 · Faire livrer</h3><p class="lead">Obtenir des documents prêts à l'emploi.</p>
       <ul><li><b>Recherche et document</b> : une synthèse sourcée livrée en document.</li><li><b>De document à présentation</b> : dix diapositives à partir d'un lien.</li><li><b>Modifier de façon ciblée</b> un document ou une diapositive par simple demande.</li><li><b>Note de synthèse mensuelle</b> et <b>tableau de bord interactif</b> construit à partir d'un classeur.</li><li><b>Option métier</b> : transformer un processus de sa propre cartographie en skill.</li></ul></div></article>
-    <article class="theme"><div class="n">04</div><div>
-      <h3>Niveau 4 · Faire construire</h3><p class="lead">Obtenir de vraies applications sans programmer soi-même.</p>
-      <ul><li><b>Un site CV</b> généré avec Google AI Studio, puis reconstruit avec Claude Code.</li><li><b>Planifier avant d'écrire</b> : faire proposer la structure d'un registre de données.</li><li><b>Une base Supabase</b> créée et alimentée, avec authentification, stockage et interface.</li><li><b>Variante</b> : un portail avec ses indicateurs.</li></ul></div></article>
-    <article class="theme"><div class="n">05</div><div>
-      <h3>Niveau 5 · Déléguer</h3><p class="lead">Confier des tâches répétitives à des agents.</p>
+    <article class="theme todo"><div class="n">04</div><div>
+      <h3>Niveau 4 · Faire construire (Supabase)<span class="badge">À reprendre</span></h3><p class="lead">Obtenir de vraies applications sans programmer soi-même.</p>
+      <ul><li><b>Déjà fait</b> : chacun a pu créer son MVP (un site) avec Claude Code.</li><li><b>Planifier avant d'écrire</b> : faire proposer la structure d'un registre de données.</li><li><b>Une base Supabase</b> créée et alimentée, avec authentification, stockage et interface.</li><li><b>Variante</b> : un portail avec ses indicateurs.</li></ul></div></article>
+    <article class="theme todo"><div class="n">05</div><div>
+      <h3>Niveau 5 · Déléguer<span class="badge">À reprendre</span></h3><p class="lead">Confier des tâches répétitives à des agents.</p>
       <ul><li><b>Veille emploi</b> : trouver des offres, puis lancer trois agents en parallèle.</li><li><b>Tâche planifiée</b> : refaire la veille automatiquement chaque lundi.</li></ul></div></article>
-  </div><div class="note"><b>Méthode du jour :</b> pour chaque prompt, comparer le résultat à un point de contrôle, puis signaler « résultat obtenu » ou « bloqué » pour suivre sa progression.</div>
+  </div><div class="note"><b>Bilan :</b> la création de compte Supabase, celle de la base de données (après le MVP réalisé avec Claude Code) et la démonstration multi-agents n'ont pas pu être abordées ; elles sont à reprendre. <br><b>Méthode du jour :</b> pour chaque prompt, comparer le résultat à un point de contrôle, puis signaler « résultat obtenu » ou « bloqué » pour suivre sa progression.</div>
 </section>
 </main>
 <footer>SYSTINFO Academy · IA Automate · Bilan pédagogique 2026-2027 · Mis à jour après la Semaine 2</footer>
