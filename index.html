@@ -74,12 +74,12 @@ footer{border-top:1px solid var(--rule);padding:22px 24px;text-align:center;colo
     <h1>IA Automate : ce que vous avez appris</h1><div class="rule"></div>
     <p>Bilan pédagogique des séances déjà dispensées. Pour chaque grand thème, vous retrouvez les notions abordées, sans détail technique, afin de situer vos acquis et de préparer la suite.</p>
     <div class="kpis">
-      <div class="kpi"><b>4</b><span>séances dispensées</span></div>
-      <div class="kpi"><b>15</b><span>grands thèmes abordés</span></div>
-      <div class="kpi"><b>2 semaines</b><span>de formation couvertes à ce jour</span></div>
+      <div class="kpi"><b>6</b><span>séances dispensées</span></div>
+      <div class="kpi"><b>26</b><span>grands thèmes abordés</span></div>
+      <div class="kpi"><b>3 semaines</b><span>de formation couvertes à ce jour</span></div>
       <div class="kpi"><b>4</b><span>thèmes non abordés, à reprendre</span></div>
     </div>
-    <nav class="toc"><a href="#s1">Séance 1 · Cartographier et découvrir n8n</a><a href="#s2">Séance 2 · n8n en profondeur</a><a href="#s3">Séance 3 · Intégrations, API et MCP</a><a href="#s4">Séance 4 · Claude en cinq niveaux</a></nav>
+    <nav class="toc"><a href="#s1">Séance 1 · Cartographier et découvrir n8n</a><a href="#s2">Séance 2 · n8n en profondeur</a><a href="#s3">Séance 3 · Intégrations, API et MCP</a><a href="#s4">Séance 4 · Claude en cinq niveaux</a><a href="#s5">Séance 5 · Agents et orchestration multi-agents</a><a href="#s6">Séance 6 · RAG, chatbots et mise en production</a></nav>
     <div class="alert"><b class="t">Note pédagogique</b>Il faut prendre en considération le retard technique de l'audience (maîtrise des outils, comptes et prérequis) afin d'éviter un fossé entre les objectifs de la formation et le niveau réellement atteint. Le rythme des séances doit s'ajuster à ce niveau, et les points non abordés, signalés « À reprendre » ci-dessous, sont à reprogrammer.</div>
   </div>
   
@@ -160,7 +160,50 @@ footer{border-top:1px solid var(--rule);padding:22px 24px;text-align:center;colo
       <ul><li><b>Veille emploi</b> : trouver des offres, puis lancer trois agents en parallèle.</li><li><b>Tâche planifiée</b> : refaire la veille automatiquement chaque lundi.</li></ul></div></article>
   </div><div class="note"><b>Bilan :</b> la création de compte Supabase, celle de la base de données (après le MVP réalisé avec Claude Code) et la démonstration multi-agents n'ont pas pu être abordées ; elles sont à reprendre. <br><b>Méthode du jour :</b> pour chaque prompt, comparer le résultat à un point de contrôle, puis signaler « résultat obtenu » ou « bloqué » pour suivre sa progression.</div>
 </section>
+<section class="seance" id="s5">
+  <div class="s-head"><div class="tag">Séance 5 · Semaine 3 · Jour 1</div><h2>Les agents : orchestration multi-agents dans les workflows</h2><p>Construire un système qui reçoit les demandes d'une boîte de contact, les fait qualifier et rédiger par des agents spécialisés, puis ne répond qu'avec l'accord d'un humain. Fil rouge : la boîte de réception de Mariam.</p></div>
+  <div class="themes">
+    <article class="theme"><div class="n">01</div><div>
+      <h3>Recevoir et tracer</h3><p class="lead">Poser la base du système : déclencheur, traitement, trace.</p>
+      <ul><li><b>Le cas</b> : une vingtaine de messages par jour à trier, comprendre et traiter.</li><li><b>Le schéma de base</b> : un formulaire de contact, un traitement, une ligne de suivi avec un statut.</li><li><b>Construire avec Claude</b> : coller un prompt par étape, puis retrouver chaque nœud dans n8n.</li></ul></div></article>
+    <article class="theme"><div class="n">02</div><div>
+      <h3>Un agent qui qualifie seul</h3><p class="lead">Passer d'un workflow à un agent.</p>
+      <ul><li><b>Workflow ou agent</b> : un chemin connu d'avance, ou un modèle qui choisit ses étapes.</li><li><b>Anatomie d'un agent</b> : la demande en entrée, la consigne système, une sortie structurée.</li><li><b>Qualification automatique</b> : catégorie, urgence, résumé et informations manquantes.</li></ul></div></article>
+    <article class="theme"><div class="n">03</div><div>
+      <h3>Des outils et une mémoire</h3><p class="lead">Donner à l'agent de quoi chercher et se souvenir.</p>
+      <ul><li><b>Un outil, c'est trois choses</b> : un nom, une description et des paramètres que le modèle remplit.</li><li><b>Deux mémoires</b> : les derniers échanges avec la personne, et l'historique stocké dans une table.</li><li><b>Un temps pour planifier</b> avant d'agir.</li><li><b>Lire les journaux d'exécution</b> pour comprendre ce que l'agent a fait.</li></ul></div></article>
+    <article class="theme"><div class="n">04</div><div>
+      <h3>Plusieurs agents : l'orchestrateur</h3><p class="lead">Spécialiser pour mieux contrôler.</p>
+      <ul><li><b>Pourquoi plusieurs agents</b> : consignes courtes, contrôle de l'ordre, mais un coût plus élevé.</li><li><b>L'orchestrateur</b> qui confie le travail à un Qualificateur et à un Scribe.</li><li><b>La passation</b> : chaque agent démarre avec un contexte vide et ne voit que ce qu'on lui transmet.</li></ul></div></article>
+    <article class="theme"><div class="n">05</div><div>
+      <h3>Vérifier avant d'agir</h3><p class="lead">Ne jamais laisser celui qui écrit se relire seul.</p>
+      <ul><li><b>Un vérificateur indépendant</b>, sur un autre modèle, avec des critères écrits.</li><li><b>Écarter le spam</b> et mettre à jour le statut de la demande.</li></ul></div></article>
+    <article class="theme"><div class="n">06</div><div>
+      <h3>L'humain dans la boucle</h3><p class="lead">Aucune réponse ne part sans accord.</p>
+      <ul><li><b>Validation humaine</b> : un courriel avec deux boutons, l'exécution restant en attente.</li><li><b>La règle</b> : un agent n'écrit jamais seul à une adresse saisie dans un formulaire.</li><li><b>Publier</b> le workflow et brancher le workflow d'erreur.</li></ul></div></article>
+    <article class="theme"><div class="n">07</div><div>
+      <h3>Fiabiliser : injection, pannes et coûts</h3><p class="lead">Anticiper ce qui peut mal tourner (en bonus).</p>
+      <ul><li><b>Injection de consignes</b> : quatre lignes de défense, dont un garde-fou en entrée.</li><li><b>Pannes courantes</b> : quota épuisé, format invalide, boucles, avec un modèle de secours.</li><li><b>Le coût d'une demande</b> : environ neuf appels au modèle, et comment le maîtriser.</li></ul></div></article>
+  </div><div class="note"><b>Livrable :</b> le workflow « Accueil · demandes entrantes » exporté, avec les captures de la table, d'un courriel de validation et des journaux d'exécution. <br><b>Accompagnement :</b> <a href="accompagnement/ateliers-autonomie.html">cinq ateliers d'autonomie</a> ont été proposés pour consolider les acquis des séances précédentes avant de poursuivre.</div>
+</section>
+<section class="seance" id="s6">
+  <div class="s-head"><div class="tag">Séance 6 · Semaine 3 · Jour 2</div><h2>RAG, chatbots, GitHub et mise en production</h2><p>Construire un assistant qui répond à partir de vos propres documents, puis le faire tourner sans vous. Fil rouge : les questions des clientes d'Awa, une boutique de pagnes.</p></div>
+  <div class="themes">
+    <article class="theme"><div class="n">01</div><div>
+      <h3>Le RAG sans jargon</h3><p class="lead">Comprendre pourquoi un modèle invente et comment lui ouvrir vos documents.</p>
+      <ul><li><b>Le problème</b> : le modèle ne connaît pas vos affaires et invente.</li><li><b>Pourquoi ne pas tout coller</b> dans la consigne : c'est long et cher.</li><li><b>L'idée</b> : un examen à livre ouvert, on va chercher les bons passages avant chaque réponse.</li><li><b>Deux temps</b> : l'ingestion, faite une fois, puis la question, à chaque message.</li><li><b>Découper, transformer en empreinte de sens, ranger</b> dans une base.</li><li><b>Les limites</b> : questions de synthèse, codes et noms propres.</li></ul></div></article>
+    <article class="theme"><div class="n">02</div><div>
+      <h3>Atelier 1 : ranger la documentation</h3><p class="lead">Alimenter une base de connaissances avec le document d'Awa.</p>
+      <ul><li><b>Le workflow d'ingestion</b> : du fichier sur Google Drive à la base Supabase.</li><li><b>Les trois sous-nœuds</b> du magasin de vecteurs et leurs réglages.</li><li><b>Vérifier le résultat</b> : des morceaux lisibles, une seule fois chacun.</li><li><b>Le piège</b> : relancer l'ingestion double les données, d'où le vidage préalable de la table.</li></ul></div></article>
+    <article class="theme"><div class="n">03</div><div>
+      <h3>Atelier 2 : le chatbot du service client</h3><p class="lead">Faire répondre un agent à partir de la documentation.</p>
+      <ul><li><b>Un agent et sa fenêtre de discussion</b>.</li><li><b>La documentation comme outil</b> de l'agent.</li><li><b>La consigne système</b> : qui il est, où chercher, quoi répondre, que faire quand il ne sait pas.</li><li><b>Tester</b> avec cinq questions, dont une hors sujet qui doit recevoir « je ne sais pas ».</li><li><b>Ouvrir le chat</b> aux clientes avec un lien public.</li></ul></div></article>
+    <article class="theme"><div class="n">04</div><div>
+      <h3>Mettre en production</h3><p class="lead">Faire tourner le chatbot sans vous, et savoir quand il tombe.</p>
+      <ul><li><b>Ce que veut dire « en production »</b> : il tourne sans vous et vous prévient en cas de panne.</li><li><b>La liste en sept points</b> : documenter, versionner, tester, réessayer, être prévenu, surveiller, maîtriser les coûts.</li><li><b>Versionner sur GitHub</b> : un dépôt privé avec le workflow exporté et un fichier README.</li><li><b>Un jeu de recette</b> : des questions avec la réponse attendue, à repasser après chaque changement.</li><li><b>Réessayer automatiquement</b> et <b>brancher le workflow d'erreur</b>.</li><li><b>Surveiller les exécutions</b> et <b>maîtriser les coûts</b> d'un message.</li></ul></div></article>
+  </div><div class="note"><b>Livrable :</b> le lien du dépôt GitHub (workflow exporté et README rempli), avec une base sans doublon et un chatbot qui répond juste et dit « je ne sais pas » quand il le faut.</div>
+</section>
 </main>
-<footer>SYSTINFO Academy · IA Automate · Bilan pédagogique 2026-2027 · Mis à jour après la Semaine 2</footer>
+<footer>SYSTINFO Academy · IA Automate · Bilan pédagogique 2026-2027 · Mis à jour après la Semaine 3</footer>
 </body>
 </html>
